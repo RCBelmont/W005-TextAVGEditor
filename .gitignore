@@ -1,0 +1,9 @@
+/TextAVGEditor/*.csproj
+/TextAVGEditor/*.sln
+/TextAVGEditor/*.user
+/TextAVGEditor/.vs
+/TextAVGEditor/Temp
+/TextAVGEditor/Library
+/TextAVGEditor/Logs
+/TextAVGEditor/obj
+/TextAVGEditor/Build

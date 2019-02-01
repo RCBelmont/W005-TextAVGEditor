@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: 3528256ea144c814c8faa925da8d545d
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - m_PersistentViewDataDictionary: {instanceID: 0}
+  - ClipFolder: {fileID: 102900000, guid: d20d77aed67dcd141b7da8cf97127b66, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
