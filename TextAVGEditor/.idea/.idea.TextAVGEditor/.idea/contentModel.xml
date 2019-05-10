@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\dbelm\.Rider2019.1\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\dbelm\.Rider2019.1\system\resharper-host\local\Transient\ReSharperHost\v191\SolutionCaches\_TextAVGEditor.-1367585252.00" t="ExcludeRecursive" />
+    <e p="G:\Proj\GitLab\WorksForUnity\w005-textavgeditor\TextAVGEditor" t="IncludeRecursive">
+      <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
+      <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
+      <e p="Assets" t="Include">
+        <e p="Test" t="Include">
+          <e p="Test.cs" t="Include" />
+        </e>
+        <e p="TexAVGEditor" t="Include">
+          <e p="Editor" t="Include">
+            <e p="EditorUtils" t="Include">
+              <e p="EditorFileUtils.cs" t="Include" />
+            </e>
+            <e p="MainWindow.cs" t="Include" />
+            <e p="Mgr" t="Include">
+              <e p="EditorNodeMgr.cs" t="Include" />
+            </e>
+            <e p="Packing" t="Include">
+              <e p="ABPacker.cs" t="Include" />
+            </e>
+            <e p="Popup" t="Include">
+              <e p="TextInputPopup.cs" t="Include" />
+            </e>
+          </e>
+          <e p="RuntimeScript" t="Include">
+            <e p="CommonUtils.cs" t="Include" />
+            <e p="Node.cs" t="Include" />
+            <e p="Proj.cs" t="Include" />
+          </e>
+        </e>
+      </e>
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="packages" t="ExcludeRecursive" />
+      <e p="Temp\bin" t="ExcludeRecursive" />
+      <e p="TextAVGEditor.sln" t="IncludeFlat" />
+    </e>
+  </component>
+</project>

@@ -8,16 +8,15 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
-namespace RaphaelBelmont.TAGEditor
+namespace RCBelmont.TAGEditor
 {
     public class MainWindow : EditorWindow
     {
-       
-
         private const int WinMinWidth = 1000;
         private const int WinMinHeight = 800;
         private Color _backgroudColor;
-        [MenuItem("Tools/TAGEditor")]
+
+        [MenuItem("Tools/TAGEditor &e")]
         public static void OpenWin()
         {
             EditorWindow win = GetWindow<MainWindow>();
@@ -30,40 +29,47 @@ namespace RaphaelBelmont.TAGEditor
         {
             _backgroudColor = GUI.backgroundColor;
         }
+
+        private Proj _proj;
+
         public void OnGUI()
         {
-            GUILayout.BeginArea(new Rect(0, 5, this.position.width, 30));
+            DrawHeadBar();
+            DrawProjInfo();
+        }
+
+        #region UI Method
+        //绘制头部工具栏
+        private void DrawHeadBar()
+        {
+            GUILayout.BeginArea(new Rect(0, 0, position.width, 60));
             EditorGUILayout.BeginHorizontal();
-            if (GUILayout.Button("About", new GUILayoutOption[] {GUILayout.Height(30)}))
+            _proj = (Proj) EditorGUILayout.ObjectField("选择工程:", _proj, typeof(Proj), false);
+            if (_proj == null && GUILayout.Button("创建新的工程"))
             {
-                Debug.Log("==============>" + "About");
+                TextInputPopup.Open("创建新的工程", "NewProject", "输入工程名称", (string name) =>
+                {
+                    _proj = EditorFileUtils.Instance.CreateNewProj(name);
+                });
             }
-
-            if (GUILayout.Button("About", new GUILayoutOption[] {GUILayout.Height(30)}))
-            {
-                Debug.Log("==============>" + "About");
-            }
-
-            if (GUILayout.Button("About", new GUILayoutOption[] {GUILayout.Height(30)}))
-            {
-                Debug.Log("==============>" + "About");
-            }
-
+            
             EditorGUILayout.EndHorizontal();
             GUILayout.EndArea();
-
-            
-            GUILayout.BeginArea(new Rect(5, 40, 260, this.position.height));
-            GUI.Box(new Rect(0, 0, 260, this.position.height), "");
-            GUI.backgroundColor = Color.cyan;
-            if (GUI.Button(new Rect(234
-                , 0, 25, 25), "+"))
-            {
-                StoryEditorLib.CrateNewClip();
-            }
-            GUI.backgroundColor = _backgroudColor;
-            GUILayout.EndArea();
-      
         }
+        //绘制工程信息栏
+        private void DrawProjInfo()
+        {
+            if (_proj == null)
+            {
+                return;
+            }
+          
+            GUILayout.BeginArea(new Rect(0, 0, 60, position.height), "ProjInfo");
+            GUILayout.Box("");
+            GUILayout.EndArea();
+        }
+        
+
+        #endregion 
     }
 }
