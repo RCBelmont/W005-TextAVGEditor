@@ -32,7 +32,7 @@ namespace RCBelmont.TAGEditor
         }
 
         #region Public Method
-
+        //创建一个新的工程
         public Proj CreateNewProj(string name = "New Project")
         {
             Proj proj = ScriptableObject.CreateInstance<Proj>();
@@ -56,7 +56,7 @@ namespace RCBelmont.TAGEditor
 
             return path;
         }
-
+        //将路径转为相对于Assets的相对路径（Assets开头）
         public string GetAssetRelativePath(string path)
         {
             string temp = path.Replace(Application.dataPath, "");

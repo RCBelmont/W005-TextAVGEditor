@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ContentModelStore">
     <e p="C:\Users\dbelm\.Rider2019.1\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\dbelm\.Rider2019.1\system\resharper-host\local\Transient\ReSharperHost\v191\SolutionCaches\_TextAVGEditor.-1367585252.00" t="ExcludeRecursive" />
-    <e p="G:\Proj\GitLab\WorksForUnity\w005-textavgeditor\TextAVGEditor" t="IncludeRecursive">
+    <e p="C:\Users\dbelm\.Rider2019.1\system\resharper-host\local\Transient\ReSharperHost\v191\SolutionCaches\_TextAVGEditor.-121794670.00" t="ExcludeRecursive" />
+    <e p="D:\Git\GitHub\w005-textavgeditor\TextAVGEditor" t="IncludeRecursive">
       <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
@@ -12,6 +12,10 @@
         </e>
         <e p="TexAVGEditor" t="Include">
           <e p="Editor" t="Include">
+            <e p="EditorUIElement" t="Include">
+              <e p="UIElement_NodeView.cs" t="Include" />
+              <e p="UIElement_ProjInfo.cs" t="Include" />
+            </e>
             <e p="EditorUtils" t="Include">
               <e p="EditorFileUtils.cs" t="Include" />
             </e>
@@ -23,11 +27,13 @@
               <e p="ABPacker.cs" t="Include" />
             </e>
             <e p="Popup" t="Include">
+              <e p="Popup_CreateProj.cs" t="Include" />
               <e p="TextInputPopup.cs" t="Include" />
             </e>
           </e>
           <e p="RuntimeScript" t="Include">
             <e p="CommonUtils.cs" t="Include" />
+            <e p="EntryNode.cs" t="Include" />
             <e p="Node.cs" t="Include" />
             <e p="Proj.cs" t="Include" />
           </e>

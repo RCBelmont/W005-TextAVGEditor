@@ -15,6 +15,7 @@ namespace RCBelmont.TAGEditor
         private const int WinMinWidth = 1000;
         private const int WinMinHeight = 800;
         private Color _backgroudColor;
+        private UIElement_NodeView _nodeView;
 
         [MenuItem("Tools/TAGEditor &e")]
         public static void OpenWin()
@@ -28,6 +29,7 @@ namespace RCBelmont.TAGEditor
         public void OnEnable()
         {
             _backgroudColor = GUI.backgroundColor;
+            _nodeView = new UIElement_NodeView();
         }
 
         private Proj _proj;
@@ -35,10 +37,15 @@ namespace RCBelmont.TAGEditor
         public void OnGUI()
         {
             DrawHeadBar();
-            DrawProjInfo();
+            //绘制工程信息栏
+            if (_proj)
+            {
+                UIElement_ProjInfo.DrawProjInfo(new Rect(0, 40, 150, position.height - 40), _proj);
+            }
         }
 
         #region UI Method
+
         //绘制头部工具栏
         private void DrawHeadBar()
         {
@@ -47,29 +54,14 @@ namespace RCBelmont.TAGEditor
             _proj = (Proj) EditorGUILayout.ObjectField("选择工程:", _proj, typeof(Proj), false);
             if (_proj == null && GUILayout.Button("创建新的工程"))
             {
-                TextInputPopup.Open("创建新的工程", "NewProject", "输入工程名称", (string name) =>
-                {
-                    _proj = EditorFileUtils.Instance.CreateNewProj(name);
-                });
+                TextInputPopup.Open("创建新的工程", "NewProject", "输入工程名称",
+                    (string name) => { _proj = EditorFileUtils.Instance.CreateNewProj(name); });
             }
-            
+
             EditorGUILayout.EndHorizontal();
             GUILayout.EndArea();
         }
-        //绘制工程信息栏
-        private void DrawProjInfo()
-        {
-            if (_proj == null)
-            {
-                return;
-            }
-          
-            GUILayout.BeginArea(new Rect(0, 0, 60, position.height), "ProjInfo");
-            GUILayout.Box("");
-            GUILayout.EndArea();
-        }
-        
 
-        #endregion 
+        #endregion
     }
 }
